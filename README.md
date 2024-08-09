@@ -5,6 +5,8 @@
       2. Para garantizar que todos los queries se completen se utiliza cualquier sistema de queues como SQS, esto para saber si existe el request todavia en la queue o si falla.
       3. Además de eso, habría que reestructurar el como se leen los datos, ya que seria un problema tener que esperar a las operaciones de escritura para poder hacer las operaciones de lectura que usualmente son mas importantes para mostrar información a un usuario o para empezar cualquier proceso.
 
+   2 y 3: en el archivo main.go
+
 4. Arquitecture:
       1. Los Client Apps son aquellos que van a mandar requests al API Gateway y son los usuarios que van a interactuar con los microservicios indirectamente, están divididos en Web y en Mobile ya que usualmente la plataforma de PC y la de celulares requiere de distintos desarrollos y funcionan de formas distintas.
       2. API Gateway es la abstracción que redirecciona los request a un microservicio en especifico. Usualmente es proporcionado por el proveedor de nube y sirve para redirigir trafico al API Gateway y de ahí a cada microservicio y así tener una buena organización del API Rest.
